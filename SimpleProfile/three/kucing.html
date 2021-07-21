@@ -1,0 +1,202 @@
+<html>
+    <title>
+    </title>
+    <head>
+        <style>canvas {border: 1px solid black;background-color: white;}</style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    </head>
+    <style>
+        #MyCanvas{
+            border : none;
+        }
+        .act-btn3{
+      background:black;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      text-decoration: none;
+      transition: ease all 0.3s;
+      position: fixed;
+      bottom:30px;
+      right:20px
+    }
+    .act-btn3:hover{background: white;color:black;}
+  </style>
+    <body>
+        <canvas id="myCanvas"></canvas>
+        <a href="../design.html" class="act-btn3">
+            <i class="fa fa-chevron-left" style="padding : 10px"></i>
+          </a>
+    </body>
+   
+    <script>
+   let canvasKita = document.getElementById("myCanvas");
+        canvasKita.width = 400;
+        canvasKita.height = 310;
+        const ctx = canvasKita.getContext("2d");
+        const imageDataSaya = ctx.getImageData(0, 0, canvasKita.width, canvasKita.height);
+      
+      // HEWAN
+//kumis
+    //kanan
+ctx.beginPath();
+ctx.moveTo(270,170)
+ctx.lineTo(290,170)
+ctx.moveTo(270,173)
+ctx.lineTo(290,178)
+ctx.moveTo(270,176)
+ctx.lineTo(290,185)
+    //kiri
+ctx.moveTo(130,170)
+ctx.lineTo(110,170)
+ctx.moveTo(130,173)
+ctx.lineTo(110,178)
+ctx.moveTo(130,176)
+ctx.lineTo(110,185)
+ctx.strokeStyle = "#8B4513"
+// ctx.lineWidth = 2;
+ctx.stroke()
+
+// Hidung & Mulut
+ctx.beginPath();
+ctx.moveTo(196,176)
+ctx.lineTo(209,176)
+ctx.lineTo(202,186)
+ctx.closePath();
+ctx.lineWidth = 1;
+ctx.fillStyle = "#8B4513"
+ctx.fill()
+ctx.stroke()
+
+
+ctx.lineWidth = 4;
+ctx.beginPath();
+ctx.arc(210, 185, 8, 0, Math.PI/1)
+ctx.stroke()
+
+ctx.beginPath();
+ctx.arc(194, 185, 8, 0, Math.PI/1)
+ctx.stroke()
+
+//kuping kanan
+ctx.beginPath();
+ctx.moveTo(230,84)
+ctx.quadraticCurveTo(285, 30, 271,110);
+ctx.fillStyle = "pink"
+ctx.fill()
+ctx.lineWidth = 4;
+ctx.strokeStyle = "#8B4513"
+ctx.stroke()
+//garis kuping kanan
+ctx.beginPath();
+ctx.moveTo(245,84)
+ctx.lineTo(262,70)
+ctx.lineTo(264,95)
+ctx.lineJoin = "round"
+ctx.stroke()
+
+//kuping kiri
+ctx.beginPath();
+ctx.moveTo(170,83)
+ctx.quadraticCurveTo(70, 60, 132,108);
+ctx.fillStyle = "pink"
+ctx.fill()
+ctx.lineWidth = 4;
+ctx.strokeStyle = "#8B4513"
+ctx.stroke()
+//garis kuping kiri
+ctx.beginPath();
+ctx.moveTo(155,88)
+ctx.lineTo(120,84)
+ctx.lineTo(138,101)
+ctx.lineJoin = "round"
+ctx.stroke()
+
+ctx.globalCompositeOperation = "destination-over";
+
+// Mata Kiri
+ctx.beginPath();
+ctx.arc(165, 150, 10, 0, 2*Math.PI, false);
+ctx.stroke()
+ctx.fillStyle = "#8B4513"
+ctx.fill()
+
+// Mata kanan
+ctx.beginPath();
+ctx.moveTo(250,140)
+ctx.lineTo(230,150)
+ctx.lineTo(250,160)
+ctx.strokeStyle = "#8B4513"
+ctx.stroke()
+
+ctx.globalCompositeOperation = "destination-over";
+
+// blush
+ctx.beginPath();
+ctx.moveTo(255,177)
+ctx.lineTo(265,187)
+ctx.moveTo(245,177)
+ctx.lineTo(255,187)
+ctx.moveTo(235,177)
+ctx.lineTo(245,187)
+ctx.moveTo(165,177)
+ctx.lineTo(175,187)
+ctx.moveTo(155,177)
+ctx.lineTo(165,187)
+ctx.moveTo(145,177)
+ctx.lineTo(155,187)
+ctx.strokeStyle = "pink";
+ctx.stroke()
+
+//Kepala
+ctx.beginPath();
+ctx.ellipse(200, 150, 70, 85, Math.PI / 2, 0, 2 * Math.PI);
+ctx.lineWidth = 9;
+ctx.strokeStyle = "#8B4513"
+ctx.fillStyle = "white"
+ctx.fill()
+ctx.stroke()
+
+ctx.globalCompositeOperation = "destination-over";
+
+// Serbet
+ctx.beginPath()
+ctx.arc(200,195,40,0, Math.PI)
+// ctx.fillStyle = "#00FF7F"
+ctx.fillStyle = "#00FF7F"
+ctx.strokeStyle = "#32CD32"
+ctx.fill()
+
+ctx.globalCompositeOperation = "source-over";
+
+ctx.beginPath();
+ctx.arc(200,235,10,0,2 * Math.PI, false);
+ctx.fillStyle ="yellow"
+ctx.strokeStyle = "#8B4513"
+ctx.lineWidth = 3;
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath();
+ctx.arc(200,150,130,0,2 * Math.PI, false);
+ctx.fillStyle = "white"
+ctx.globalAlpha = 0.3;
+ctx.fill()
+ctx.strokeStyle = "pink"
+ctx.lineWidth = 10;
+ctx.stroke()
+
+ctx.globalAlpha = 0.8;
+var imageObj = new Image();
+
+      imageObj.onload = function() {
+        ctx.drawImage(imageObj, 250, 235,70,70);
+      };
+      imageObj.src = 'https://www.nicepng.com/png/full/410-4100480_pita-ulang-tahun-png-gambar-pita-ulang-tahun.png';
+</script>
+</html>

@@ -1,0 +1,200 @@
+<html>
+    <title>
+    </title>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <style>canvas {border: 1px solid black;background-color: white;}</style>
+    </head>
+    <style>
+        body{
+            background-color: black;
+        }
+        #MyCanvas{
+            border:none;
+            background-color: black;
+        }
+        .act-btn3{
+      background:black;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      text-decoration: none;
+      transition: ease all 0.3s;
+      position: fixed;
+      bottom:30px;
+      right:20px
+    }
+    .act-btn3:hover{background: white;color:black;}
+  </style>
+    <body>
+        <canvas id="myCanvas"></canvas>
+        <a href="../design.html" class="act-btn3">
+            <i class="fa fa-chevron-left" style="padding : 10px"></i>
+          </a>
+    </body>
+    <script>
+   let canvasKita = document.getElementById("myCanvas");
+        canvasKita.width = 400;
+        canvasKita.height = 410;
+        const ctx = canvasKita.getContext("2d");
+        const imageDataSaya = ctx.getImageData(0, 0, canvasKita.width, canvasKita.height);
+
+         // <Fungsi>
+
+        //Gambar Titik
+        function gambarTitik(imageDataTemp, x, y, r, g, b) {
+    let index;
+    index = 4 * (x + (y * myCanvas.width));
+    imageDataTemp.data[index + 0] = r;	// R
+    imageDataTemp.data[index + 1] = g;	// G
+    imageDataTemp.data[index + 2] = b;	// B
+    imageDataTemp.data[index + 3] = 255;	// A
+}
+    //Polygon 
+    function polygon(imageDataTemp, point_array, r,g,b) {
+    let point = point_array[0];
+    for(let i = 1; i < point_array.length; i++) {
+        let point2 = point_array[i];
+        dda(imageDataTemp, point.x, point.y, point2.x, point2.y, r,g,b);
+        point = point2;
+    }
+    dda(imageDataTemp, point.x, point.y, point_array[0].x, point_array[0].y, r,g,b);
+}
+
+    // DDA
+    function dda(imageData, x1, y1, x2, y2, r, g, b) {
+            let dx = x2 - x1;
+            let dy = y2 - y1;
+  
+            if (Math.abs(dx) > Math.abs(dy)) {
+              // Penambahan pada sumbu x
+              let y = y1;
+              if (x2 > x1) {
+                // Bergerak ke kanan
+                for (let x = x1; x < x2; x++) {
+                  y = y + dy / Math.abs(dx); // 1/m
+                  gambarTitik(imageData, x, y, r, g, b);
+                }
+              } else {
+                // Bergerak ke kiri
+                for (let x = x1; x > x2; x--) {
+                  y = y + dy / Math.abs(dx); // 1/m
+                  gambarTitik(imageData, x, y, r, g, b);
+                }
+              }
+            } else {
+              // Penambahan pada sumbu y
+              let x = x1;
+              if (y2 > y1) {
+                // Bergerak ke kanan
+                for (let y = y1; y < y2; y++) {
+                  x = x + dx / Math.abs(dy); // m
+                  gambarTitik(imageData, x, y, r, g, b);
+                }
+              } else {
+                // Bergerak ke kiri
+                for (let y = y1; y > y2; y--) {
+                  x = x + dx / Math.abs(dy); // m
+                  gambarTitik(imageData, x, y, r, g, b);
+                }
+              }
+            }
+          }
+
+        //Fill Area Flood Fill
+        function floodFill(imageDataTemp, canvas, x0,y0, toFlood, color) 
+            {let tumpukan= [];
+              tumpukan.push({x : x0, y : y0});
+              while(tumpukan.length> 0) 
+              {var titikSkrg= tumpukan.shift();
+                var indexSkrg= 4 * (titikSkrg.x+ titikSkrg.y* canvas.width);
+                var r1 = imageDataTemp.data[indexSkrg+ 0];
+                var g1 = imageDataTemp.data[indexSkrg+ 1];
+                var b1 = imageDataTemp.data[indexSkrg+ 2];
+                
+                if((r1 == toFlood.r) && (g1 == toFlood.g) && (b1 == toFlood.b)) 
+                {imageDataTemp.data[indexSkrg+ 0] = color.r;
+                  imageDataTemp.data[indexSkrg+ 1] = color.g;
+                  imageDataTemp.data[indexSkrg+ 2] = color.b;
+                  imageDataTemp.data[indexSkrg+ 3] = 255;
+                  
+                  tumpukan.push({x:titikSkrg.x+1, y:titikSkrg.y});
+                  tumpukan.push({x:titikSkrg.x-1, y:titikSkrg.y});
+                  tumpukan.push({x:titikSkrg.x, y:titikSkrg.y+1});
+                  tumpukan.push({x:titikSkrg.x, y:titikSkrg.y-1});
+                }}}
+
+function translasi(titikLama, T){
+    let x_baru = titikLama.x + T.x;
+    let y_baru = titikLama.y + T.y;
+
+    return {x:x_baru, y:y_baru};
+}
+
+function translasiArray(arrayTitik, T){
+    let arrayHasil = [];
+    for(let i=0; i<arrayTitik.length; i++) {
+     let temp = translasi(arrayTitik[i], T);
+     arrayHasil.push(temp);
+    }
+     return arrayHasil;
+ }
+ function rotasi(titikLama, theta){
+    let x_baru = titikLama.x * Math.cos(theta) - titikLama.y * Math.sin(theta);
+    let y_baru = titikLama.y * Math.cos(theta) + titikLama.x * Math.sin(theta);
+
+    return{x:x_baru , y:y_baru}
+
+}
+function rotasiTitikCustom(titikLama, tPusat, theta){
+    let rot1 = translasi(titikLama, {x: - tPusat.x, y: -tPusat.y});
+    let rot2 = rotasi(rot1,theta);
+    let rot3 = translasi(rot2, tPusat);
+
+    return rot3;
+}
+function rotasiArray(arrayTitik, titikPusat, sudut){
+    let arrayHasil = [];
+    for(let i=0; i<arrayTitik.length; i++) {
+     let temp = rotasiTitikCustom(arrayTitik[i], titikPusat, sudut);
+     arrayHasil.push(temp);
+    }
+     return arrayHasil;
+ }
+        // </Fungsi>
+
+        let kotak1= [ 
+    {x:100, y:50}, 
+    {x:250, y:50}, 
+    {x:250, y:140}, 
+    {x:55, y:140}, 
+    ]; 
+polygon(imageDataSaya, kotak1, 255,255,255); 
+floodFill(imageDataSaya, canvasKita, 150,65, {r:0,g:0,b:0}, 
+{r:225,g:225,b:225}); 
+ctx.putImageData(imageDataSaya, 0, 0); 
+// Garis (BUild IN JS) 
+ctx.moveTo(50,160); 
+ctx.lineTo(110,30); 
+//Shadow Garis 
+ctx.shadowOffsetX = 2; 
+ctx.shadowOffsetY = 2; 
+ctx.shadowBlur = 2; 
+ctx.shadowColor = 'rgba(125, 125, 125, 1)';  
+ctx.strokeStyle = 'white'; 
+ctx.lineWidth = 5; 
+ctx.stroke(); 
+//Shadow Text 
+ctx.font = 'bold italic 50pt Arial'; 
+ctx.shadowOffsetX = 1; 
+ctx.shadowOffsetY = 3; 
+ctx.shadowBlur = 5; 
+ctx.shadowColor = 'rgba(0, 0, 0, 1)';  
+ctx.fillText('T M', 105, 115, 200, 100)
+    </script>
+</html>

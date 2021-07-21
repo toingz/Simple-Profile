@@ -1,0 +1,459 @@
+
+.canvaskotak {background-color: transparent;
+  margin-top : 10px;
+  margin-left : -130px;
+  width: 100px;
+  height: 100px;
+}
+
+.canvassegitiga {background-color: transparent;
+  margin-top : 10px;
+  margin-left : -130px;
+  width: 100px;
+  height: 100px;
+}
+
+.skills {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-size: 17px;
+  transition: 0.5s;
+}
+.backplate {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  transition: 0.5s;
+  border: 2px solid #ddd;
+}
+.htmlcss {width: 85%; background-color: #ffb347;border-radius: 10px;}
+.laravel {width: 55%; background-color: #1a202c;border-radius: 10px;}
+.js {width: 50%; background-color: #EEEE9B;border-radius: 10px;}
+.mobile {width: 20%; background-color:#99CCFF;border-radius: 10px;}
+
+.pp1 .htmlcss:hover{
+  background-color: #FBFAF5;
+  color : black;
+  transition: 0.5s;
+  text-shadow: 0px 0px 1px black;
+  cursor: pointer;
+}
+
+.pp2 .laravel:hover{
+  background-color: #FBFAF5;
+  color : black;
+  transition: 0.5s;
+  text-shadow: 0px 0px 1px black;
+  cursor: pointer;
+}
+
+.pp3 .js:hover{
+  background-color: #FBFAF5;
+  color : black;
+  transition: 0.5s;
+  text-shadow: 0px 0px 1px black;
+  cursor: pointer;
+}
+
+.pp4 .mobile:hover{
+  background-color: #FBFAF5;
+  color : black;
+  transition: 0.5s;
+  text-shadow: 0px 0px 1px black;
+  cursor: pointer;
+}
+
+#about {
+    transition: 0.5s;
+    border-radius: 10px;
+    position: relative;
+    float: center;
+    
+  }
+  #about:hover {
+    transition: 0.5s;
+  }
+  #about2 {
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  #about2:hover {
+    transition: 0.5s;
+  }
+  #about3 {
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  #about3:hover {
+    transition: 0.5s;
+  }
+  .typetextbox {
+    width: 400px;
+    height: 50px;
+    text-shadow: 0px 0px 5px #f5f6fb;
+    color: white;
+  }
+  .ex {
+    background-color: black;
+    opacity: 0.9;
+    margin-top: 200px;
+    box-shadow: 0px 0px 4px 5px black;
+    font-family: times new roman;
+    transition: 0.1s;
+    border-radius: 10px;
+    text-align: center;
+    height: 300px;
+  }
+  .ex:hover {
+    transition: 0.1s;
+    transform: scale(1.1);
+    margin-top: -60px;
+    box-shadow: 0px 0px 10px 5px black;
+    border-radius: 10px;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+  }
+
+  .ex:hover , garis:hover{
+    border-bottom: 1px solid #eee;
+  }
+  body {
+    background: white;
+  }
+  .whites {
+    background: white;
+    width: 100px;
+    color: black;
+  }
+  .garis-utama {
+    width: 80%;
+    border-radius: 10px;
+    border: 2pt solid black;
+    color: black;
+    height: 30px;
+    text-align: center;
+    padding: 4px;
+    text-shadow: 0px 0px 2px black;
+    margin-left: 70px;
+  }
+  .u2 {
+    color: white;
+    text-shadow: 0px 0px 5px white;
+  }
+  .garis-ijo {
+    border-radius: 10px;
+    margin-top: -28px;
+    margin-left: 1.5px;
+    width: 10%;
+    height: 26px;
+    background: #00cc00;
+    margin-left: 70px;
+  }
+  .garis-orange {
+    border-radius: 10px;
+    margin-top: -28px;
+    margin-left: 1.5px;
+    width: 8.1%;
+    height: 26px;
+    background: #ffa500;
+    margin-left: 70px;
+  }
+  .garis-yellow {
+    border-radius: 10px;
+    margin-top: -28px;
+    margin-left: 1.5px;
+    width: 5%;
+    height: 26px;
+    background: #e5e500;
+    margin-left: 70px;
+  }
+  .garis-blue {
+    border-radius: 10px;
+    margin-top: -28px;
+    margin-left: 1.5px;
+    width: 14.2%;
+    height: 26px;
+    background: #19e5e6;
+    margin-left: 70px;
+  }
+  .garis-black {
+    border-radius: 8px;
+    margin-top: -28px;
+    width: 59.6%;
+    height: 26px;
+    background: #000000;
+    margin-left: 70px;
+  }
+  
+  /* new WEB */
+  /* Navbar */
+  .img-nav {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  .nav-hov:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+    text-shadow: 0px 0px 5px white;
+    transform: scale(1.1);
+  }
+  .nav-hov {
+    transition: 0.3s;
+  }
+  .mar-nav {
+    margin-left: 20px;
+  }
+  
+  /* banner atas */
+  .banner {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    padding: 15%;
+  }
+  #parallax-atas {
+    margin-top: 80px;
+    background-image: url(https://i.postimg.cc/sD3jGw08/back.png);
+    height: 700px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transform: scale(1.05);
+  }
+  .kotak-hi {
+    width: 95px;
+    height: 27px;
+    border: 1px solid white;
+    text-align: center;
+    background: white;
+    color: black;
+    transition: 0.3s;
+  }
+  .kotak-hi:hover {
+    transition: 0.2s;
+    box-shadow: 0px 0px 50px white;
+    transform: scale(1.07);
+  }
+  .garis {
+    width: 25%;
+  }
+  .socmed {
+    width: 300px;
+    background: none;
+    margin-top: 20px;
+    margin-left: -20px;
+  }
+  .soc-pos {
+    margin-left: 20px;
+    width: 30px;
+    transition: 0.3s;
+    color: white;
+    transition: 0.3s;
+  }
+  .soc-pos:hover {
+    transition: 0.3s;
+    opacity: 0.6;
+    text-shadow: 0px 0px 5px;
+  }
+  .see-me {
+    width: 110px;
+    height: 26px;
+    border: 1pt solid white;
+    margin-top: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .see-me:hover {
+    background: white;
+    color: black;
+    transition: 0.3s;
+    transform: scale(1.1);
+  }
+  .text-me {
+    color: white;
+    transition: 0.3s;
+  }
+  .text-me:hover {
+    color: black;
+    transition: 0.3s;
+    transform: scale(1.1);
+  }
+
+  /* Track */
+  .text-lingkar {
+    color: white;
+    text-shadow: 0px 0px 1px;
+    text-align: center;
+    padding: 10px;
+    margin-left: -550px;
+    margin-top: -30px;
+    font-size: 11px;
+    transition: 0.3s;
+  }
+  .text-lingkar:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+  }
+  .text-overs {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 5px;
+    margin-left: -370px;
+    transform: rotate(-90deg);
+    font-size: 13px;
+  }
+  .text-besar {
+    color: white;
+    text-shadow: 0px 0px 8px;
+    text-align: center;
+    font-size: 80px;
+    margin-top: -67px;
+  }
+  
+  /* Servis */
+  .servis1 {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 1px #0000be;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  /* bukti  */
+  .bukti-back {
+    background: transparent;
+    width: 100%;
+    height: 200px;
+    margin-top: -200px;
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .bukti {
+    background-image: url(https://statik.tempo.co/data/2016/07/22/id_524589/524589_620.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    background-color: blue;
+    opacity: 0.5;
+    z-index: -1;
+    filter: blur(5px);
+  }
+  .bp {
+    background: none;
+    border: none;
+    padding: 10px;
+  }
+  
+  /* My Blog */
+  .serv-card2 {
+    box-shadow: 1pt 1pt 5pt 1pt black;
+    border: none;
+    transition: 0.5s;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .serv-card2:hover {
+    margin-top: 30px;
+    transform: scale(1.15);
+  }
+  .contact {
+    padding: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .conme {
+    color: white;
+    width: 115px;
+    border: 2pt solid white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+    transition: 0.3s;
+  }
+  .conme:hover {
+    transition: 0.3s;
+    color: black;
+    background: white;
+    transform: scale(1.2);
+  }
+  
+  /*  Footer */
+  .foot {
+    font-weight: bold;
+    text-shadow: 5px 5px 5px 5px black;
+  }
+  .bgfoot {
+    background-image: url(https://i.postimg.cc/Dy1D3MDg/wave-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    background-color: gray;
+    padding: 50px;
+  }
+  .img-foot {
+    width: 50px;
+    height: 50px;
+  }
+  /* form */
+  .form-box {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 1px black;
+    width: 350px;
+    margin-top: 10px;
+  }
+  .form-box1 {
+    padding: 10px;
+  }
+  .btn {
+    background: black;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 10px;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: gray;
+    transition: 0.3s;
+    transform: scale(1.1);
+  }
+  
+  .ct{
+    background-color: #22272a;height: 600px;
+  }
+  .txc{
+    font-family:'Courier New', Courier, monospace;
+    color:white
+  }
+  .txc:hover{
+    background: none;
+    outline: none !important;
+    color: white;
+  }
+  input,textarea{
+    border: none;
+    border-bottom: 3px solid black;
+    background: none;
+    color:white;
+    padding : 10px;
+    font-weight: bold;
+    transition: 0.5s;
+    outline: none !important;
+  }
+  input:focus, textarea:focus{
+    outline: none !important;
+    border-bottom: 3px solid purple;
+    transition: 0.5s;
+  }
+
+ .butt{
+   border : 2px solid black;
+   background: none;
+   font-weight: bold;
+   border-radius: 50px;
+ }
